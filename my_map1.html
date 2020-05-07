@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+   <link rel="stylesheet" href="https://rawgit.com/lvoogdt/Leaflet.awesome-markers/2.0/develop/dist/leaflet.awesome-markers.css">
+   <script src="https://rawgithub.com/lvoogdt/Leaflet.awesome-markers/2.0/develop/dist/leaflet.awesome-markers.js"></script>
+
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster-src.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js"></script>
+
+   <link rel="stylesheet" href="https://birdage.github.io/Leaflet.awesome-markers/dist/leaflet.awesome.rotate.css">
+
+   
+   
+   
+   
+
+   <style>
+
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position:absolute;
+        top:0;
+        bottom:0;
+        right:0;
+        left:0;
+      }
+
+   </style>
+</head>
+
+<body>
+
+   <div class="folium-map" id="folium_6d9d38b4298b4781908bfac5756933de" style="width: 100%; height: 100%"></div>
+
+   <script>
+
+      
+
+      var base_tile = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 18,
+          minZoom: 1,
+          attribution: 'Map data (c) <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+      });
+
+      var baseLayer = {
+        "Base Layer": base_tile
+      };
+
+      /*
+      addition of the wms layers
+      */
+
+      
+
+      /*
+      addition of the tile layers
+      */
+      
+
+      /*
+      list of layers to be added
+      */
+      var layer_list = {
+      
+      };
+
+      /*
+      Bounding box.
+      */
+      var southWest = L.latLng(-90, -180),
+          northEast = L.latLng(90, 180),
+          bounds = L.latLngBounds(southWest, northEast);
+
+      /*
+      Creates the map and adds the selected layers
+      */
+      var map = L.map('folium_6d9d38b4298b4781908bfac5756933de', {
+                                       center:[17.123184, 79.208824],
+                                       zoom: 9,
+                                       maxBounds: bounds,
+                                       layers: [base_tile]
+                                     });
+
+      L.control.layers(baseLayer, layer_list).addTo(map);
+
+      //cluster group
+      var clusteredmarkers = L.markerClusterGroup();
+      //section for adding clustered markers
+      
+      //add the clustered markers to the group anyway
+      map.addLayer(clusteredmarkers);
+
+      
+
+      
+      var circle_1 = L.circle([17.38714, 78.491684], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_1.bindPopup("Hyderabad");
+      circle_1._popup.options.maxWidth = 300;
+      map.addLayer(circle_1)
+      
+      var circle_2 = L.circle([17.390654, 77.834694], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_2.bindPopup("Ranga Reddy");
+      circle_2._popup.options.maxWidth = 300;
+      map.addLayer(circle_2)
+      
+      var circle_3 = L.circle([17.611629, 78.08181], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_3.bindPopup("Sanga Reddy");
+      circle_3._popup.options.maxWidth = 300;
+      map.addLayer(circle_3)
+      
+      var circle_4 = L.circle([19.6667, 78.533302], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_4.bindPopup("adilabad");
+      circle_4._popup.options.maxWidth = 300;
+      map.addLayer(circle_4)
+      
+      var circle_5 = L.circle([19.096413, 78.342972], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_5.bindPopup("Nirmal");
+      circle_5._popup.options.maxWidth = 300;
+      map.addLayer(circle_5)
+      
+      var circle_6 = L.circle([19.3619, 79.293], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_6.bindPopup("Kumuram Bheem");
+      circle_6._popup.options.maxWidth = 300;
+      map.addLayer(circle_6)
+      
+      var circle_7 = L.circle([17.554356, 80.619736], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_7.bindPopup("Bhadradri Kothagudam");
+      circle_7._popup.options.maxWidth = 300;
+      map.addLayer(circle_7)
+      
+      var circle_8 = L.circle([18.794905, 78.912872], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_8.bindPopup("Jagtial");
+      circle_8._popup.options.maxWidth = 300;
+      map.addLayer(circle_8)
+      
+      var circle_9 = L.circle([17.721872, 79.172287], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_9.bindPopup("Jangoan");
+      circle_9._popup.options.maxWidth = 300;
+      map.addLayer(circle_9)
+      
+      var circle_10 = L.circle([17.143908, 79.623924], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_10.bindPopup("Suryapet");
+      circle_10._popup.options.maxWidth = 300;
+      map.addLayer(circle_10)
+      
+      var circle_11 = L.circle([18.4293, 79.8635], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_11.bindPopup("Jayshankar Bupalpally");
+      circle_11._popup.options.maxWidth = 300;
+      map.addLayer(circle_11)
+      
+      var circle_12 = L.circle([16.23, 77.8], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_12.bindPopup("Gadwal");
+      circle_12._popup.options.maxWidth = 300;
+      map.addLayer(circle_12)
+      
+      var circle_13 = L.circle([18.3205, 78.337], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_13.bindPopup("Kamareddy");
+      circle_13._popup.options.maxWidth = 300;
+      map.addLayer(circle_13)
+      
+      var circle_14 = L.circle([18.438555, 79.128838], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_14.bindPopup("Karimnagar");
+      circle_14._popup.options.maxWidth = 300;
+      map.addLayer(circle_14)
+      
+      var circle_15 = L.circle([17.247253, 80.151443], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_15.bindPopup("Khammam");
+      circle_15._popup.options.maxWidth = 300;
+      map.addLayer(circle_15)
+      
+      var circle_16 = L.circle([17.6026, 80.0036], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_16.bindPopup("Mahububabad");
+      circle_16._popup.options.maxWidth = 300;
+      map.addLayer(circle_16)
+      
+      var circle_17 = L.circle([16.737509, 78.008125], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_17.bindPopup("Mahububnagar");
+      circle_17._popup.options.maxWidth = 300;
+      map.addLayer(circle_17)
+      
+      var circle_18 = L.circle([18.8714, 79.4443], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_18.bindPopup("Mancherial");
+      circle_18._popup.options.maxWidth = 300;
+      map.addLayer(circle_18)
+      
+      var circle_19 = L.circle([18.045992, 78.263359], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_19.bindPopup("Medak");
+      circle_19._popup.options.maxWidth = 300;
+      map.addLayer(circle_19)
+      
+      var circle_20 = L.circle([17.630222, 78.484215], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_20.bindPopup("Medchal");
+      circle_20._popup.options.maxWidth = 300;
+      map.addLayer(circle_20)
+      
+      var circle_21 = L.circle([18.1932, 79.9414], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_21.bindPopup("Mulugu");
+      circle_21._popup.options.maxWidth = 300;
+      map.addLayer(circle_21)
+      
+      var circle_22 = L.circle([16.4939, 78.3102], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_22.bindPopup("NagarKurnool");
+      circle_22._popup.options.maxWidth = 300;
+      map.addLayer(circle_22)
+      
+      var circle_23 = L.circle([17.05662, 79.268333], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_23.bindPopup("Nalgonda");
+      circle_23._popup.options.maxWidth = 300;
+      map.addLayer(circle_23)
+      
+      var circle_24 = L.circle([16.745668, 77.495415], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_24.bindPopup("Narayanpet");
+      circle_24._popup.options.maxWidth = 300;
+      map.addLayer(circle_24)
+      
+      var circle_25 = L.circle([18.6725, 78.0941], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_25.bindPopup("Nizamabad");
+      circle_25._popup.options.maxWidth = 300;
+      map.addLayer(circle_25)
+      
+      var circle_26 = L.circle([18.6151, 79.3827], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_26.bindPopup("Peddapalli");
+      circle_26._popup.options.maxWidth = 300;
+      map.addLayer(circle_26)
+      
+      var circle_27 = L.circle([18.38662, 78.802246], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_27.bindPopup("sirsilla");
+      circle_27._popup.options.maxWidth = 300;
+      map.addLayer(circle_27)
+      
+      var circle_28 = L.circle([18.101904, 78.852074], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_28.bindPopup("Siddipet");
+      circle_28._popup.options.maxWidth = 300;
+      map.addLayer(circle_28)
+      
+      var circle_29 = L.circle([17.33643, 77.904846], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_29.bindPopup("Vikarabad");
+      circle_29._popup.options.maxWidth = 300;
+      map.addLayer(circle_29)
+      
+      var circle_30 = L.circle([16.3623, 78.0622], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_30.bindPopup("Wanarparthy");
+      circle_30._popup.options.maxWidth = 300;
+      map.addLayer(circle_30)
+      
+      var circle_31 = L.circle([17.956121, 79.614708], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_31.bindPopup("Warangal");
+      circle_31._popup.options.maxWidth = 300;
+      map.addLayer(circle_31)
+      
+      var circle_32 = L.circle([17.518345, 78.885956], 500, {
+                            color: 'black',
+                            fillColor: 'black',
+                            fillOpacity: 0.6
+                            });
+      circle_32.bindPopup("Yadadri");
+      circle_32._popup.options.maxWidth = 300;
+      map.addLayer(circle_32)
+      
+
+      
+      var latLngs = [ [17.518345, 78.885956],  [17.05662, 79.268333], ];
+var line_1 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_1);
+      
+      var latLngs = [ [17.518345, 78.885956],  [17.143908, 79.623924], ];
+var line_2 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_2);
+      
+      var latLngs = [ [17.518345, 78.885956],  [17.721872, 79.172287], ];
+var line_3 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_3);
+      
+      var latLngs = [ [17.956121, 79.614708],  [17.721872, 79.172287], ];
+var line_4 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_4);
+      
+      var latLngs = [ [17.143908, 79.623924],  [17.721872, 79.172287], ];
+var line_5 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_5);
+      
+      var latLngs = [ [17.6026, 80.0036],  [17.721872, 79.172287], ];
+var line_6 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_6);
+      
+      var latLngs = [ [17.956121, 79.614708],  [18.1932, 79.9414], ];
+var line_7 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_7);
+      
+      var latLngs = [ [17.956121, 79.614708],  [17.6026, 80.0036], ];
+var line_8 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_8);
+      
+      var latLngs = [ [16.745668, 77.495415],  [16.737509, 78.008125], ];
+var line_9 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_9);
+      
+      var latLngs = [ [16.3623, 78.0622],  [16.737509, 78.008125], ];
+var line_10 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_10);
+      
+      var latLngs = [ [16.4939, 78.3102],  [16.737509, 78.008125], ];
+var line_11 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_11);
+      
+      var latLngs = [ [16.23, 77.8],  [16.3623, 78.0622], ];
+var line_12 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_12);
+      
+      var latLngs = [ [16.3623, 78.0622],  [16.4939, 78.3102], ];
+var line_13 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_13);
+      
+      var latLngs = [ [16.4939, 78.3102],  [17.05662, 79.268333], ];
+var line_14 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_14);
+      
+      var latLngs = [ [16.745668, 77.495415],  [16.737509, 78.008125], ];
+var line_15 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_15);
+      
+      var latLngs = [ [16.4939, 78.3102],  [17.05662, 79.268333], ];
+var line_16 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_16);
+      
+      var latLngs = [ [17.05662, 79.268333],  [17.143908, 79.623924], ];
+var line_17 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_17);
+      
+      var latLngs = [ [17.143908, 79.623924],  [16.737509, 78.008125], ];
+var line_18 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_18);
+      
+      var latLngs = [ [17.143908, 79.623924],  [17.247253, 80.151443], ];
+var line_19 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_19);
+      
+      var latLngs = [ [16.737509, 78.008125],  [18.1932, 79.9414], ];
+var line_20 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_20);
+      
+      var latLngs = [ [17.554356, 80.619736],  [16.737509, 78.008125], ];
+var line_21 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_21);
+      
+      var latLngs = [ [17.247253, 80.151443],  [16.737509, 78.008125], ];
+var line_22 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_22);
+      
+      var latLngs = [ [17.247253, 80.151443],  [17.554356, 80.619736], ];
+var line_23 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_23);
+      
+      var latLngs = [ [16.745668, 77.495415],  [16.23, 77.8], ];
+var line_24 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_24);
+      
+      var latLngs = [ [17.554356, 80.619736],  [17.6026, 80.0036], ];
+var line_25 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_25);
+      
+      var latLngs = [ [17.630222, 78.484215],  [17.390654, 77.834694], ];
+var line_26 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_26);
+      
+      var latLngs = [ [17.630222, 78.484215],  [17.518345, 78.885956], ];
+var line_27 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_27);
+      
+      var latLngs = [ [17.38714, 78.491684],  [17.630222, 78.484215], ];
+var line_28 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_28);
+      
+      var latLngs = [ [16.745668, 77.495415],  [17.390654, 77.834694], ];
+var line_29 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_29);
+      
+      var latLngs = [ [16.737509, 78.008125],  [17.390654, 77.834694], ];
+var line_30 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_30);
+      
+      var latLngs = [ [16.4939, 78.3102],  [17.390654, 77.834694], ];
+var line_31 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_31);
+      
+      var latLngs = [ [17.05662, 79.268333],  [17.390654, 77.834694], ];
+var line_32 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_32);
+      
+      var latLngs = [ [17.518345, 78.885956],  [17.390654, 77.834694], ];
+var line_33 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_33);
+      
+      var latLngs = [ [17.33643, 77.904846],  [17.390654, 77.834694], ];
+var line_34 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_34);
+      
+      var latLngs = [ [17.33643, 77.904846],  [16.737509, 78.008125], ];
+var line_35 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_35);
+      
+      var latLngs = [ [17.33643, 77.904846],  [16.745668, 77.495415], ];
+var line_36 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_36);
+      
+      var latLngs = [ [17.630222, 78.484215],  [18.101904, 78.852074], ];
+var line_37 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_37);
+      
+      var latLngs = [ [17.518345, 78.885956],  [18.101904, 78.852074], ];
+var line_38 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_38);
+      
+      var latLngs = [ [17.721872, 79.172287],  [18.101904, 78.852074], ];
+var line_39 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_39);
+      
+      var latLngs = [ [17.956121, 79.614708],  [18.101904, 78.852074], ];
+var line_40 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_40);
+      
+      var latLngs = [ [18.045992, 78.263359],  [18.101904, 78.852074], ];
+var line_41 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_41);
+      
+      var latLngs = [ [18.045992, 78.263359],  [17.630222, 78.484215], ];
+var line_42 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_42);
+      
+      var latLngs = [ [18.438555, 79.128838],  [18.101904, 78.852074], ];
+var line_43 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_43);
+      
+      var latLngs = [ [18.438555, 79.128838],  [17.956121, 79.614708], ];
+var line_44 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_44);
+      
+      var latLngs = [ [18.438555, 79.128838],  [18.4293, 79.8635], ];
+var line_45 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_45);
+      
+      var latLngs = [ [18.438555, 79.128838],  [18.6151, 79.3827], ];
+var line_46 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_46);
+      
+      var latLngs = [ [17.38714, 78.491684],  [17.390654, 77.834694], ];
+var line_47 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_47);
+      
+      var latLngs = [ [18.4293, 79.8635],  [18.1932, 79.9414], ];
+var line_48 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_48);
+      
+      var latLngs = [ [18.4293, 79.8635],  [17.956121, 79.614708], ];
+var line_49 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_49);
+      
+      var latLngs = [ [18.4293, 79.8635],  [18.6151, 79.3827], ];
+var line_50 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_50);
+      
+      var latLngs = [ [17.390654, 77.834694],  [17.611629, 78.08181], ];
+var line_51 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_51);
+      
+      var latLngs = [ [17.33643, 77.904846],  [17.611629, 78.08181], ];
+var line_52 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_52);
+      
+      var latLngs = [ [17.630222, 78.484215],  [17.611629, 78.08181], ];
+var line_53 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_53);
+      
+      var latLngs = [ [18.045992, 78.263359],  [17.611629, 78.08181], ];
+var line_54 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_54);
+      
+      var latLngs = [ [19.6667, 78.533302],  [19.096413, 78.342972], ];
+var line_55 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_55);
+      
+      var latLngs = [ [19.6667, 78.533302],  [19.3619, 79.293], ];
+var line_56 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_56);
+      
+      var latLngs = [ [19.096413, 78.342972],  [18.6725, 78.0941], ];
+var line_57 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_57);
+      
+      var latLngs = [ [19.096413, 78.342972],  [18.794905, 78.912872], ];
+var line_58 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_58);
+      
+      var latLngs = [ [18.6725, 78.0941],  [18.3205, 78.337], ];
+var line_59 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_59);
+      
+      var latLngs = [ [18.6725, 78.0941],  [18.38662, 78.802246], ];
+var line_60 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_60);
+      
+      var latLngs = [ [18.6725, 78.0941],  [18.794905, 78.912872], ];
+var line_61 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_61);
+      
+      var latLngs = [ [18.794905, 78.912872],  [18.8714, 79.4443], ];
+var line_62 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_62);
+      
+      var latLngs = [ [18.794905, 78.912872],  [18.438555, 79.128838], ];
+var line_63 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_63);
+      
+      var latLngs = [ [18.794905, 78.912872],  [18.6151, 79.3827], ];
+var line_64 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_64);
+      
+      var latLngs = [ [18.8714, 79.4443],  [19.3619, 79.293], ];
+var line_65 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_65);
+      
+      var latLngs = [ [18.8714, 79.4443],  [18.6151, 79.3827], ];
+var line_66 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_66);
+      
+      var latLngs = [ [18.3205, 78.337],  [18.045992, 78.263359], ];
+var line_67 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_67);
+      
+      var latLngs = [ [18.3205, 78.337],  [18.38662, 78.802246], ];
+var line_68 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_68);
+      
+      var latLngs = [ [18.3205, 78.337],  [17.611629, 78.08181], ];
+var line_69 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_69);
+      
+      var latLngs = [ [18.38662, 78.802246],  [18.101904, 78.852074], ];
+var line_70 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_70);
+      
+      var latLngs = [ [18.38662, 78.802246],  [18.438555, 79.128838], ];
+var line_71 = L.polyline(latLngs,{
+
+weight: 1,
+opacity: 5,
+});
+      
+      map.addLayer(line_71);
+      
+
+      
+
+      
+
+      
+
+
+
+   </script>
+
+</body>
